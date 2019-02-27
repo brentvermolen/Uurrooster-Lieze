@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialKeyguardLayout="@layout/week_widget"
+    android:initialLayout="@layout/week_widget"
+    android:minHeight="40dp"
+    android:minWidth="250dp"
+    android:resizeMode="vertical|horizontal"
+    android:previewImage="@drawable/calendar_0"
+    android:updatePeriodMillis="5400000"
+    android:widgetCategory="home_screen"></appwidget-provider>

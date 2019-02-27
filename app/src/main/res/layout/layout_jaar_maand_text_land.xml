@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llMaand"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"><LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_layout_square"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/dagen1"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:rotation="0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:layout_weight="1"
+        android:text="1"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="4"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="5"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="6"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="7"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="8"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="9"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="10"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="11"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="12"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="13"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="14"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="15"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="16"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="17"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen18"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="18"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen19"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="19"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="20"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="21"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="22"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen23"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="23"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen24"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="24"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen25"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="25"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen26"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="26"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen27"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="27"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen28"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="28"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen29"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="29"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen30"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="30"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_layout_square"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/dagen31"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:rotation="0"
+            android:textSize="12sp"
+            android:text="31"/>
+
+    </LinearLayout>
+
+</LinearLayout>

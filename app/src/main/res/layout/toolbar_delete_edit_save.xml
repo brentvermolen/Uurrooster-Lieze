@@ -1,0 +1,89 @@
+<android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarDetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:contentInsetLeft="0dp"
+    android:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageButton
+        android:id="@+id/imgBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/lblToolbarDeleteEditSaveTitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="Details" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btnPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/preview"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_marginRight="15dp"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_marginRight="20dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/delete"/>
+
+        <ImageButton
+            android:id="@+id/btnOpslaan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/save"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_marginRight="15dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/edit" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

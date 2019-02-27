@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ploegen Kalender 2</string>
+    <string name="signIn">Aanmelden</string>
+    <string name="asGuest">Verder als gast</string>
+
+    <string name="january">Januari</string>
+    <string name="february">Februari</string>
+    <string name="march">Maart</string>
+    <string name="april">April</string>
+    <string name="may">Mei</string>
+    <string name="june">Juni</string>
+    <string name="july">Juli</string>
+    <string name="august">Augustus</string>
+    <string name="september">September</string>
+    <string name="october">Oktober</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+
+    <string name="monday">Maandag</string>
+    <string name="tuesday">Dinsdag</string>
+    <string name="wednesday">Woensdag</string>
+    <string name="thursday">Donderdag</string>
+    <string name="friday">Vrijdag</string>
+    <string name="saterday">Zaterdag</string>
+    <string name="sunday">Zondag</string>
+
+    <string name="edit">Wijzig</string>
+    <string name="delete">Verwijder</string>
+    <string name="add">Toevoegen</string>
+    <string name="options">Opties</string>
+    <string name="optionMonthCalendar">Maand Kalender</string>
+    <string name="optionYearOverview">Jaar Overzicht</string>
+    <string name="optionTabShift">Data van tab shifts</string>
+    <string name="optionTabChange">Data van tab wissels</string>
+
+    <string name="shift">Shift</string>
+    <string name="original">Origineel</string>
+    <string name="change">Wissel</string>
+    <string name="notes">Nota\'s</string>
+    <string name="no_notes">Geen Nota\'s</string>
+
+    <string name="startupScreen">Begin scherm</string>
+    <string name="calendar">Kalender</string>
+    <string name="showPersonal">Toon persoonlijke nota\'s in kalender</string>
+    <string name="alternatif">Alternatieve tekst:</string>
+    <string name="backgroundColors">Kleuren van achtergrond</string>
+    <string name="backgroundShiftChange">Gebruik kleur om wissel te tonen</string>
+    <string name="backgroundShift">Toon shift kleur (indien gegeven)</string>
+    <string name="name">Naam</string>
+    <string name="dob">Geboortedatum</string>
+    <string name="address">Adres</string>
+    <string name="city">Stad/Gemeente</string>
+
+    <string name="loginData">LOGIN DATA</string>
+    <string name="chooseName">Voer Naam In</string>
+    <string name="password">Password</string>
+
+    <string name="shiftCode">Shift Code</string>
+    <string name="description">Omschrijving</string>
+    <string name="from">Van</string>
+    <string name="to">Tot</string>
+    <string name="color">Kleur</string>
+
+    <string name="choose">Kies</string>
+
+    <string name="dontShowAgain">Niet opnieuw vragen</string>
+
+    <string name="time">TIJD</string>
+
+    <string name="newCollegue">Nieuwe Collega</string>
+    <string name="specifyMonth">Kies Maand</string>
+    <string name="specifyYear">Kies Jaar</string>
+    <string name="shiftChangeData">Gewisselde Shiften</string>
+    <string name="shiftData">Data Shiften</string>
+
+    <string name="tutorial">Tutorial</string>
+    <string name="welcome">Welkom</string>
+
+    <string name="toastCreateShiftFirst">Gelieve eerst uw shiften aan te maken</string>
+    <string name="toastCantEditShiftChange">Kan wissels niet wijzigen</string>
+    <string name="toastPrintingNotSupported">Printen is niet mogelijk op dit apparaat</string>
+    <string name="toastArchive">Archief - Kan niet wijzigen</string>
+    <string name="toastSameAsOriginal">Uw originele shift is dezelfde als de gewijzigde</string>
+    <string name="toastAddCollegue">Gelieve eerst uw collega\'s toe te voegen</string>
+    <string name="toastSelectShift">Gelieve een shift te selecteren</string>
+    <string name="toastAddShift">Gelieve uw shifts eerst toe te voegen</string>
+    <string name="toastCannotChangeWhileEdit">Kan niet van tab veranderen terwijl u uw profiel wijzigt</string>
+    <string name="toastEnterValidDoB">Geef een geldige geboortedatum in (dd/mm/yyyy)</string>
+    <string name="toastEnterShiftCode">Geef een shift code in</string>
+    <string name="toastExists">bestaat al</string>
+    <string name="toastEnterSomethingElse">gelieve iets anders in te vullen</string>
+    <string name="toastCheckDate">Gelieve de datum te controleren</string>
+
+    <string name="details">Details</string>
+    <string name="shifts">Shiften</string>
+    <string name="changes">Wissels</string>
+    <string name="print">Printen</string>
+    <string name="setPeriod">Kies Periode</string>
+    <string name="workData">Werk Data</string>
+    <string name="settings">Instellingen</string>
+    <string name="newShift">Nieuwe Shift</string>
+    <string name="collegues">Collega\'s</string>
+    <string name="editPreference">Wijzig voorkeur</string>
+
+    <string name="goTo">Ga Naar</string>
+    <string name="areYouSure">Bent u zeker?</string>
+    <string name="undoChanges">Dit maakt alle wijzigingen aan de kalender ongedaan</string>
+
+    <string name="deleteDataOfTheDay">Bent u zeker dat u alle gegevens van deze dag wil wissen?</string>
+    <string name="user">Gebruiker</string>
+    <string name="profile">Profiel</string>
+    <string name="lay_out">Uiterlijk</string>
+
+    <string name="textSize">Tekst grootte</string>
+    <string name="firstDay">Eerste dag vd week</string>
+
+    <string name="today">Vandaag</string>
+    <string name="curWeek">Huidige Week</string>
+    <string name="weekToCome">Week Die Volgt</string>
+
+    <string name="BACKGROUND_SHIFT_CHANGE">ACHTERGROND_WISSEL</string>
+    <string name="BACKGROUND_CALENDAR_HEADER">ACHTERGROND_KALENDER_HOOFDING</string>
+    <string name="BACKGROUND_DAYS">ACHTERGROND_DAGEN</string>
+    <string name="BACKGROUND_DAYS_HEADER">ACHTERGROND_DAGEN_HOOFDING</string>
+    <string name="BACKGROUND_CALENDAR">ACHTERGRONG_KALENDER</string>
+    <string name="LETTERTYPE_HEADERS">LETTERTYPE_HOOFDING</string>
+    <string name="LETTERTYPE_DAG_HEADERS">LETTERTYPE_DAG_HOOFDING</string>
+    <string name="LETTERTYPE_DAG_INHOUD">LETTERTYPE_DAG_INHOUD</string>
+    <string name="TEXTCOLOR_TITELS">TEKSTKLEUR_TITELS</string>
+    <string name="TEXTCOLOR_DAYS">TEKSTKLEUR_DAGEN</string>
+    <string name="TEXTCOLOR_DAY_HEADER">TEKSTKLEUR_DAG_HOOFDING</string>
+    <string name="TEXTCOLOR_DAY_CONTENT">TEKSTKLEUR_DAG_INHOUD</string>
+    <string name="BACKGROUND_WEEKDAYS">ACHERGROND_WEEKDAGEN</string>
+    <string name="LETTERTYPE_WEEKDAGEN">LETTERTYPE_WEEKDAGEN</string>
+    <string name="DETAILS_ACHTERGROND">DETAILS_ACHTERGOND</string>
+    <string name="DETAILS_LETTERTYPE_DATUM">DETAILS_LETTERTYPE_DATUM</string>
+    <string name="DETAILS_LETTERTYPE_TITELS">DETAILS_LETTERTYPE_TITELS</string>
+    <string name="DETAILS_LETTERTYPE_INHOUD">DETAILS_LETTERTYPE_INHOUD</string>
+    <string name="DETAILS_KLEUR_DATUM">DETAILS_KLEUR_DATUM</string>
+    <string name="DETAILS_KLEUR_TITELS">DETAILS_KLEUR_TITELS</string>
+    <string name="DETAILS_KLEUR_INHOUD">DETAILS_KLEUR_INHOUD</string>
+    <string name="DETAILS_ACHTERGROND_DATUM">DETAILS_ACHTERGROND_DATUM</string>
+    <string name="DETAILS_ACHTERGROND_TITELS">DETAILS_ACHTERGROND_TITELS</string>
+    <string name="DETAILS_ACHTERGROND_INHOUD">DETAILS_ACHTERGROND_INHOUD</string>
+
+    <string name="month">Maand</string>
+    <string name="preview">Voorbeeld</string>
+
+    <string name="messageKalenderTitel1">Shiften Invoegen</string>
+    <string name="messageKalender1">Klik op het wijzig icoon in de toolbar\nSelecteer één van je ingevoerde shifts\nKlik op de dagen dat je die shift hebt\nDoe dit voor alle shiften van deze maand\nKlik op het opslaan icoon</string>
+    <string name="messageKalenderTitel2">Lijst</string>
+    <string name="messageKalender2">Klik op het lijntjes icoon in de toolbar\nDruk op de vierkantjes om terug te gaan naar kalender</string>
+    <string name="messageKalender3">Klik op de dag om details te zien van die dag</string>
+    <string name="messageKalenderTitel4">Vergrootglas</string>
+    <string name="messageKalender4">Klik hier om snel naar eender welke maand te gaan</string>
+
+    <string name="messageCollegas1">Hier kan je al je collega\'s toevoegen, verwijderen of wijzigen\n\nDeze worden gebruikt om te bij te houden met wie je shiften wisselt\nJe kan aangeven met wie je wisselt en achteraf vinden hoe vaak je wisselt met die persoon</string>
+    <string name="messageData1">Je kan al je gewerkte / te werken shiften &amp; alle wissels bekijken van de gekozen periode</string>
+    <string name="messageDataTitel2">Periode</string>
+    <string name="messageData2">Klik op het wijzig icoon om de periode in te stellen</string>
+    <string name="messageData3">In de laatste tab kan je alle data afdrukken &amp; een maand kalender of jaar overzicht afdrukken></string>
+    <string name="messageHome1">Omdat dit de eerste keer is dat je de app opent zal je een tutorial krijgen op elke nieuwe pagina\nWe hopen dat de app werkt naar uw behoren en laat ons iets weten als je er iets niet werkt of als je iets wil hebben toegevoegd</string>
+    <string name="messageHomeTitel2">Widgets</string>
+    <string name="messageHome2">Bekijk zeker de widgets die je kan gebruiken op je start scherm</string>
+    <string name="messageHomeTitel3">Rate us!</string>
+    <string name="messageHome3">We horen graag uw reactie, geef ons punten of reageer in de Play Store!</string>
+    <string name="messageInstellingen1">Hier kan je basis gegevens over jezelf invullen, druk op het wijzig icoon om de data in te vullen\n\nDeze data wordt niet buiten de app gebruikt</string>
+    <string name="messageInstellingen2">Verander bepaalde zaken in de app naar uw behoren</string>
+    <string name="messageInstellingen3">Hier kan je het uiterlijk van de kalender aanpassen naar hoe je zelf wil\nVerander achtergrond &amp; tekstkleuren!\n\nDeze verandering zal ook toegepast worden op de maand widget</string>
+    <string name="messageNieuweShift1">Wijzig of voeg nieuwe shiften hier toe\n\nEnkel de code is een verplicht vak\nDruk op de tijdstippen om deze te wijzigen\nAls tijdstippen niet van toepassing zijn, 0-0 laten staant\n\nKlik op het vak om een aangepaste kleur te kiezen voor deze shift</string>
+    <string name="messageShifts1">Hier kan je al je shifts toevoegen, wijzigen of verwijderen\n\nDeze worden gebruikt om je kalender mee te vullen</string>
+    <string name="toastFieldsCorrect">Gelieve alle velden correct in te vullen!</string>
+</resources>

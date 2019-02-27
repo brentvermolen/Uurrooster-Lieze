@@ -1,0 +1,289 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WeekToComeWidget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99030303"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:id="@+id/llWidWeek1"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead1"
+            android:layout_weight="1"
+            android:text="MA\n3/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift1"
+            android:layout_weight="1"
+            android:text="H"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers1"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek2"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead2"
+            android:layout_weight="1"
+            android:text="DI\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift2"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers2"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek3"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead3"
+            android:layout_weight="1"
+            android:text="WO\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift3"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers3"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek4"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead4"
+            android:layout_weight="1"
+            android:text="DO\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift4"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers4"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek5"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead5"
+            android:layout_weight="1"
+            android:text="VR\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift5"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers5"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek6"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead6"
+            android:layout_weight="1"
+            android:text="ZA\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift6"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers6"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWidWeek7"
+        android:layout_weight="1"
+        android:background="@drawable/border_layout_right_side"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lblWidWeekDagHead7"
+            android:layout_weight="1"
+            android:text="ZO\n4/12"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekShift7"
+            android:layout_weight="1"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/lblWidWeekPers7"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

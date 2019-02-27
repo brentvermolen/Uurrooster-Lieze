@@ -1,0 +1,116 @@
+<android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:contentInsetLeft="0dp"
+    android:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageButton
+        android:id="@+id/imgBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/lblToolbarTitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="Calendar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnGom"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/delete"/>
+
+        <Spinner
+            android:id="@+id/cboNieuwShiften"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:dropDownWidth="150dp"
+            android:popupBackground="@android:color/background_light"
+            android:visibility="gone"></Spinner>
+
+        <ImageButton
+            android:id="@+id/btnNieuwOpslaan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/save"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btnEditKalenderToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/edit"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:layout_marginRight="15dp"/>
+
+        <ImageButton
+            android:id="@+id/btnLijstView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/list"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/btnKalenderView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/squares"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/btnGaNaarKalenderToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/search"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

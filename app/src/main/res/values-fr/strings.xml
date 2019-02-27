@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><!--
+    <string name="app_name">Team Work Calendar</string>
+    <string name="signIn">S\'identifier</string>
+
+    <string name="january">janvier</string>
+    <string name="february">février</string>
+    <string name="march">mars</string>
+    <string name="april">avril</string>
+    <string name="may">mai</string>
+    <string name="june">juin</string>
+    <string name="july">juillet</string>
+    <string name="august">août</string>
+    <string name="september">september</string>
+    <string name="october">octobre</string>
+    <string name="november">novembre</string>
+    <string name="december">decembre</string>
+
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saterday">Samedi</string>
+    <string name="sunday">Dimanche</string>
+
+    <string name="edit">Modifier</string>
+    <string name="delete">Supprimer</string>
+    <string name="add">Ajouter</string>
+    <string name="options">Options</string>
+    <string name="optionMonthCalendar">Calendrier du mois</string>
+    <string name="optionYearOverview">Aperçu de l\'année</string>
+    <string name="optionTabShift">Données des shifts</string>
+    <string name="optionTabChange">Données des shifts modifié</string>
+
+    <string name="shift">Shift</string>
+    <string name="original">Original</string>
+    <string name="change">Modifier</string>
+    <string name="notes">Remarques</string>
+
+    <string name="startupScreen">Écran de démarrage</string>
+    <string name="calendar">Calendrier</string>
+    <string name="showPersonal">Afficher les notes personnelles dans le calendrier</string>
+    <string name="alternatif">Texte alternatif:</string>
+    <string name="backgroundColors">Couleurs de fond</string>
+    <string name="backgroundShiftChange">Utiliser une couleur pour indiquer un shift modifié</string>
+    <string name="backgroundShift">Utiliser la couleur du shift (si elle est donnée)</string>
+    <string name="name">Nom</string>
+    <string name="dob">Date de naissance</string>
+    <string name="address">Adresse</string>
+    <string name="city">Ville</string>
+
+    <string name="loginData">DONNÉES DE CONEXION</string>
+    <string name="chooseName">Choisissez votre nom</string>
+    <string name="password">Mot de passe</string>
+
+    <string name="shiftCode">Shift Code</string>
+    <string name="description">Description</string>
+    <string name="from">De</string>
+    <string name="to">À</string>
+    <string name="color">Couleur</string>
+
+    <string name="choose">Choisir</string>
+
+    <string name="dontShowAgain">Ne plus afficher</string>
+
+    <string name="time">TEMPS</string>
+
+    <string name="newCollegue">Nouveau Collègue</string>
+    <string name="specifyMonth">Préciser mois</string>
+    <string name="specifyYear">Préciser année</string>
+    <string name="shiftChangeData">Données Shift Modifié</string>
+    <string name="shiftData">Données Shift</string>
+
+    <string name="tutorial">Didacticiel</string>
+    <string name="welcome">Bienvenue</string>
+
+    <string name="toastCreateShiftFirst">Veuillez d\'abord créer vos shifts</string>
+    <string name="toastCantEditShiftChange">Impossible de modifier Shift Modifié</string>
+    <string name="toastPrintingNotSupported">L\'impression n\'est pas possible sur votre appareil</string>
+    <string name="toastArchive">Archive - Impossible de Modifier</string>
+    <string name="toastSameAsOriginal">Votre shift original est la même que celle qui a été modifié</string>
+    <string name="toastAddCollegue">S\'il vous plaît ajouter des collègues d\'abord</string>
+    <string name="toastSelectShift">Veuillez d\'abord sélectionner une shift</string>
+    <string name="toastAddShift">S\'il vous plaît ajouter des shifts d\'abord</string>
+    <string name="toastCannotChangeWhileEdit">Impossible de modifier l\'onglet en édition du profil</string>
+    <string name="toastEnterValidDoB">Entrez une date de naissance valide (jj/mm/aaaa)</string>
+    <string name="toastEnterShiftCode">Veuillez entrer un shift code</string>
+    <string name="toastExists">existe déjà</string>
+    <string name="toastEnterSomethingElse">s\'il vous plaît entrer quelque chose d\'autre</string>
+    <string name="toastCheckDate">S\'il vous plaît vérifier votre date</string>
+
+    <string name="details">Details</string>
+    <string name="shifts">Shifts</string>
+    <string name="changes">Modifications</string>
+    <string name="print">Imprimer</string>
+    <string name="setPeriod">Définir la période</string>
+    <string name="workData">Données de travail</string>
+    <string name="settings">Paramètres</string>
+    <string name="newShift">Nouveau Shift</string>
+    <string name="collegues">Collègues</string>
+    <string name="editPreference">Modifier la préférences</string>
+
+    <string name="goTo">Aller à</string>
+    <string name="areYouSure">Êtes-vous sûr?</string>
+    <string name="undoChanges">Cela annulera toutes les modifications apportées à le calendrier</string>
+
+    <string name="deleteDataOfTheDay">Êtes-vous sûr de vouloir supprimer toutes les données ce jour-là?</string>
+    <string name="user">Utilisateur</string>
+    <string name="profile">Profil</string>
+    <string name="lay_out">Apparence</string>
+
+    <string name="textSize">Taille du texte</string>
+    <string name="firstDay">Premier jour de la semaine</string>
+
+    <string name="BACKGROUND_SHIFT_CHANGE">FOND_SHIFT_MODIFIER</string>
+    <string name="BACKGROUND_CALENDAR_HEADER">FOND_CALENDRIER_ENTÊTE</string>
+    <string name="BACKGROUND_DAYS">FOND_JOURNÉES</string>
+    <string name="BACKGROUND_DAYS_HEADER">FOND_JOURNÉES_ENTÊTE</string>
+    <string name="BACKGROUND_CALENDAR">FOND_CALENDRIER</string>
+    <string name="LETTERTYPE_HEADERS">TYPE_DE_POLICE_HEADERS</string>
+    <string name="LETTERTYPE_DAG_HEADERS">TYPE_DE_POLICE_DAY_HEADERS</string>
+    <string name="LETTERTYPE_DAG_INHOUD">TYPE_DE_POLICE_DAY_CONTENU</string>
+    <string name="TEXTCOLOR_TITELS">COULEUR_TITELS</string>
+    <string name="TEXTCOLOR_DAYS">COULEUR_JOURNÉES</string>
+    <string name="TEXTCOLOR_DAY_HEADER">COULEUR_DAY_HEADER</string>
+    <string name="TEXTCOLOR_DAY_CONTENT">COULEUR_DAY_CONTENU</string>
+    <string name="BACKGROUND_WEEKDAYS">FOND_JOURS_DE_LA_SEMAINE</string>
+    <string name="LETTERTYPE_WEEKDAGEN">TYPE_DE_POLICE_JOURS_DE_LA_SEMAINE</string>
+    <string name="DETAILS_ACHTERGROND">DETAILS_FOND</string>
+    <string name="DETAILS_LETTERTYPE_DATUM">DETAILS_TYPE_DE_POLICE_DATE</string>
+    <string name="DETAILS_LETTERTYPE_TITELS">DETAILS_TYPE_DE_POLICE_TITELS</string>
+    <string name="DETAILS_LETTERTYPE_INHOUD">DETAILS_TYPE_DE_POLICE_CONTENU</string>
+    <string name="DETAILS_KLEUR_DATUM">DETAILS_COULEUR_DATE</string>
+    <string name="DETAILS_KLEUR_TITELS">DETAILS_COULEUR_TITELS</string>
+    <string name="DETAILS_KLEUR_INHOUD">DETAILS_COULEUR_CONTENU</string>
+    <string name="DETAILS_ACHTERGROND_DATUM">DETAILS_FOND_DATE</string>
+    <string name="DETAILS_ACHTERGROND_TITELS">DETAILS_FOND_TITRE</string>
+    <string name="DETAILS_ACHTERGROND_INHOUD">DETAILS_FOND_CONTENU</string>
+
+    <string name="month">Mois</string>
+    <string name="preview">Aperçu</string>
+
+    <string name="messageKalenderTitel1">Entrée Shifts</string>
+    <string name="messageKalender1">Appuyez sur le bouton d\'édition dans la barre d\'outils\nSélectionnez l\'un des shifts que vous avez entrés\nCliquez sur les jours où vous avez le shift sélectionné\nFaites ceci pour tous les différents shifts que vous avez ce mois-ci\nAppuyez sur le bouton Enregistrer lorsque vous avez terminé</string>
+    <string name="messageKalenderTitel2">Vue de liste</string>
+    <string name="messageKalender2">Press the lines in the toolbar to go to listview\nTo go back to calendar mode, press the squares in toolbar</string>
+    <string name="messageKalender3">To see details of a day press that day</string>
+    <string name="messageKalenderTitel4">Looking Glass</string>
+    <string name="messageKalender4">Press this to go to any month you like</string>
+
+    <string name="messageCollegas1">Here you can add, remove and edit all your co-workers\n\nThese will be used when U are going to save shift changes\nYou can say who U switched your shift with and later check how many times you have switched with each of your collegues</string>
+    <string name="messageData1">You can watch all the shifts you worked / will work and all the shift changes you made</string>
+    <string name="messageDataTitel2">Period</string>
+    <string name="messageData2">Press the edit button to set the period to count data from</string>
+    <string name="messageData3">In the last tab you can print all the data &amp; print a month calendar or a year overview></string>
+    <string name="messageHome1">Since this is the first time you use the app you will get information and a tuturial on each screen you open\nWe hope you like it and let us know if you want something added or if the app isn\'t working properly</string>
+    <string name="messageHomeTitel2">Widgets</string>
+    <string name="messageHome2">Be sure to check out the HomeScreen widgets</string>
+    <string name="messageHomeTitel3">Rate us!</string>
+    <string name="messageHome3">Feel free to comment and rate us on the Play Store!</string>
+    <string name="messageInstellingen1">Here you can change basic data about yourself by clicking the edit button in the upper right corner\nEdit your DoB by clicking on the date\n\nThis data won\'t be used outside this app</string>
+    <string name="messageInstellingen2">Change values of the app to your liking</string>
+    <string name="messageInstellingen3">You can change the Layout for the Calendar by clicking the \'Edit\' button and selecting a COULEUR\nYou can change text and FOND COULEURs\n\nThese changes will also apply to the calendar widget</string>
+    <string name="messageNieuweShift1">Edit or create a new shift here\n\nOnly the shift code isn obliguated\nClick on the time to select the correct begin and end hours\nIf they are not applied, leave 0-0\n\nClick on the panel to choose a unique COULEUR for the current shift</string>
+    <string name="messageShifts1">Here you can add, remove and edit all your shifts\n\nThese are used to fill your calendar</string>
+ --></resources>

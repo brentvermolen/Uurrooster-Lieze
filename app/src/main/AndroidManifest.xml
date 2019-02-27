@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vermolen.uurrooster">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/calendar_0"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/calendar_0"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CollegasActivity" />
+        <activity android:name=".ShiftenActivity" />
+        <activity android:name=".KalenderActivity" />
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".NieuweShiftActivity" />
+        <activity android:name=".InstellingenActivity" />
+        <activity android:name=".WijzigVoorkeurActivity" />
+
+        <receiver
+            android:name=".Widget.TodayWidget"
+            android:label="@string/today">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/today_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".Widget.WeekWidget"
+            android:label="@string/curWeek">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/week_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".Widget.WeekToComeWidget"
+            android:label="@string/weekToCome">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/week_to_come_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".Widget.MonthWidget"
+            android:label="@string/month">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/month_widget_info" />
+        </receiver>
+
+        <activity android:name=".DataActivity" />
+        <activity android:name=".LoginActivity" />
+    </application>
+
+</manifest>

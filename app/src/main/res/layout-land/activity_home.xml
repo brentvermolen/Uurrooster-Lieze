@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnKalender"
+                app:srcCompat="@drawable/calendar_0"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/vintage_white"
+                android:padding="15dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:id="@+id/llGegevens"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/btnKalender"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnCollegas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/vintage_white"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/collegues" />
+
+                <ImageButton
+                    android:id="@+id/btnShiften"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/vintage_white"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/shift" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnData"
+                app:srcCompat="@drawable/data"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:background="@drawable/vintage_white"
+                android:padding="12dp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btnInstellingen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:background="@drawable/vintage_white"
+                android:padding="15dp"
+                android:layout_below="@id/llGegevens"
+                app:srcCompat="@drawable/settings"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/prgLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:background="@android:color/transparent"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

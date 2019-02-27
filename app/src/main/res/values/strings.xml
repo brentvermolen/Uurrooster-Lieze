@@ -1,0 +1,177 @@
+<resources>
+    <string name="app_name">Team Work Calendar 2</string>
+    <string name="signIn">Sign in</string>
+    <string name="asGuest">Continue as guest</string>
+
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saterday">Saterday</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="options">Options</string>
+    <string name="optionMonthCalendar">Month Calendar</string>
+    <string name="optionYearOverview">Year Overview</string>
+    <string name="optionTabShift">Data from tab shifts</string>
+    <string name="optionTabChange">Data from tab changes</string>
+
+    <string name="shift">Shift</string>
+    <string name="original">Original</string>
+    <string name="change">Change</string>
+    <string name="notes">Notes</string>
+    <string name="no_notes">No Notes</string>
+
+    <string name="startupScreen">Startup screen</string>
+    <string name="calendar">Calendar</string>
+    <string name="showPersonal">Show personal notes in calendar</string>
+    <string name="alternatif">Alternatif text:</string>
+    <string name="backgroundColors">Background Colors</string>
+    <string name="backgroundShiftChange">Use color to indicate shift change</string>
+    <string name="backgroundShift">Use shift color (if given)</string>
+    <string name="name">Name</string>
+    <string name="dob">DoB</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+
+    <string name="loginData">LOGIN DATA</string>
+    <string name="chooseName">Enter name</string>
+    <string name="password">Password</string>
+
+    <string name="shiftCode">Shift Code</string>
+    <string name="description">Description</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="color">Color</string>
+
+    <string name="choose">Choose</string>
+
+    <string name="dontShowAgain">Don\'t show again</string>
+
+    <string name="time">TIME</string>
+
+    <string name="newCollegue">New Collegue</string>
+    <string name="specifyMonth">Specify Month</string>
+    <string name="specifyYear">Specify Year</string>
+    <string name="shiftChangeData">Shift Change Data</string>
+    <string name="shiftData">Shift Data</string>
+
+    <string name="tutorial">Tutorial</string>
+    <string name="welcome">Welcome</string>
+
+    <string name="toastCreateShiftFirst">Please create your shifts first</string>
+    <string name="toastCantEditShiftChange">Can\'t edit shift change</string>
+    <string name="toastPrintingNotSupported">Printing is not supported on your device</string>
+    <string name="toastArchive">Archive - Cannot edit</string>
+    <string name="toastSameAsOriginal">Your original shift is the same as the changed shift</string>
+    <string name="toastAddCollegue">Please add collegues first</string>
+    <string name="toastSelectShift">Please select a shift first</string>
+    <string name="toastAddShift">Please add shifts first</string>
+    <string name="toastCannotChangeWhileEdit">Cannot change tab while editing profile</string>
+    <string name="toastEnterValidDoB">Enter valid DoB (dd/mm/yyyy)</string>
+    <string name="toastEnterShiftCode">Please enter a shift code</string>
+    <string name="toastExists">already exists</string>
+    <string name="toastEnterSomethingElse">please enter something else</string>
+    <string name="toastCheckDate">Please check your date</string>
+
+    <string name="details">Details</string>
+    <string name="shifts">Shifts</string>
+    <string name="changes">Changes</string>
+    <string name="print">Print</string>
+    <string name="setPeriod">Set Period</string>
+    <string name="workData">Work Data</string>
+    <string name="settings">Settings</string>
+    <string name="newShift">New Shift</string>
+    <string name="collegues">Collegues</string>
+    <string name="editPreference">Edit Preference</string>
+
+    <string name="goTo">Go To</string>
+    <string name="areYouSure">Are you sure?</string>
+    <string name="undoChanges">This will undo all the changes to your calendar</string>
+
+    <string name="deleteDataOfTheDay">Are you sure you want to delete all the data off this day?</string>
+    <string name="user">User</string>
+    <string name="profile">Profile</string>
+    <string name="lay_out">Lay-Out</string>
+
+    <string name="textSize">Text Size</string>
+    <string name="firstDay">First Day Of Week</string>
+
+    <string name="today">Today</string>
+    <string name="curWeek">Current Week</string>
+    <string name="weekToCome">Week To Come</string>
+
+    <string name="BACKGROUND_SHIFT_CHANGE">BACKGROUND_SHIFT_CHANGE</string>
+    <string name="BACKGROUND_CALENDAR_HEADER">BACKGROUND_CALENDAR_HEADER</string>
+    <string name="BACKGROUND_DAYS">BACKGROUND_DAYS</string>
+    <string name="BACKGROUND_DAYS_HEADER">BACKGROUND_DAYS_HEADER</string>
+    <string name="BACKGROUND_CALENDAR">BACKGROUND_CALENDAR</string>
+    <string name="LETTERTYPE_HEADERS">FONT_HEADERS</string>
+    <string name="LETTERTYPE_DAG_HEADERS">FONT_DAY_HEADERS</string>
+    <string name="LETTERTYPE_DAG_INHOUD">FONT_DAY_CONTENT</string>
+    <string name="TEXTCOLOR_TITELS">TEXTCOLOR_TITELS</string>
+    <string name="TEXTCOLOR_DAYS">TEXTCOLOR_DAYS</string>
+    <string name="TEXTCOLOR_DAY_HEADER">TEXTCOLOR_DAY_HEADER</string>
+    <string name="TEXTCOLOR_DAY_CONTENT">TEXTCOLOR_DAY_CONTENT</string>
+    <string name="BACKGROUND_WEEKDAYS">BACKGROUND_WEEKDAYS</string>
+    <string name="LETTERTYPE_WEEKDAGEN">FONT_WEEKDAYS</string>
+    <string name="DETAILS_ACHTERGROND">DETAILS_BACKGROUND</string>
+    <string name="DETAILS_LETTERTYPE_DATUM">DETAILS_FONT_DATE</string>
+    <string name="DETAILS_LETTERTYPE_TITELS">DETAILS_FONT_TITELS</string>
+    <string name="DETAILS_LETTERTYPE_INHOUD">DETAILS_FONT_CONTENT</string>
+    <string name="DETAILS_KLEUR_DATUM">DETAILS_COLOR_DATE</string>
+    <string name="DETAILS_KLEUR_TITELS">DETAILS_COLOR_TITELS</string>
+    <string name="DETAILS_KLEUR_INHOUD">DETAILS_COLOR_CONTENT</string>
+    <string name="DETAILS_ACHTERGROND_DATUM">DETAILS_BACKGROUND_DATE</string>
+    <string name="DETAILS_ACHTERGROND_TITELS">DETAILS_BACKGROUND_TITLE</string>
+    <string name="DETAILS_ACHTERGROND_INHOUD">DETAILS_BACKGROUND_CONTENT</string>
+
+    <string name="month">Month</string>
+    <string name="preview">Preview</string>
+
+    <string name="messageKalenderTitel1">Input Shifts</string>
+    <string name="messageKalender1">Press the edit button in the toolbar\nSelect one of the shifts you entered\nClick on the days you have the selected shift\nDo this for all the different shifts you have that month\nPress the save button when done</string>
+    <string name="messageKalenderTitel2">ListView</string>
+    <string name="messageKalender2">Press the lines in the toolbar to go to listview\nTo go back to calendar mode, press the squares in toolbar</string>
+    <string name="messageKalender3">To see details of a day press that day</string>
+    <string name="messageKalenderTitel4">Looking Glass</string>
+    <string name="messageKalender4">Press this to go to any month you like</string>
+
+    <string name="messageCollegas1">Here you can add, remove and edit all your co-workers\n\nThese will be used when U are going to save shift changes\nYou can say who U switched your shift with and later check how many times you have switched with each of your collegues</string>
+    <string name="messageData1">You can watch all the shifts you worked / will work and all the shift changes you made</string>
+    <string name="messageDataTitel2">Period</string>
+    <string name="messageData2">Press the edit button to set the period to count data from</string>
+    <string name="messageData3">In the last tab you can print all the data &amp; print a month calendar or a year overview></string>
+    <string name="messageHome1">Since this is the first time you use the app you will get information and a tuturial on each screen you open\nWe hope you like it and let us know if you want something added or if the app isn\'t working properly</string>
+    <string name="messageHomeTitel2">Widgets</string>
+    <string name="messageHome2">Be sure to check out the HomeScreen widgets</string>
+    <string name="messageHomeTitel3">Rate us!</string>
+    <string name="messageHome3">Feel free to comment and rate us on the Play Store!</string>
+    <string name="messageInstellingen1">Here you can change basic data about yourself by clicking the edit button in the upper right corner\nEdit your DoB by clicking on the date\n\nThis data won\'t be used outside this app</string>
+    <string name="messageInstellingen2">Change values of the app to your liking</string>
+    <string name="messageInstellingen3">You can change the Layout for the Calendar by clicking the \'Edit\' button and selecting a color\nYou can change text and background colors\n\nThese changes will also apply to the calendar widget</string>
+    <string name="messageNieuweShift1">Edit or create a new shift here\n\nOnly the shift code isn obliguated\nClick on the time to select the correct begin and end hours\nIf they are not applied, leave 0-0\n\nClick on the panel to choose a unique color for the current shift</string>
+    <string name="messageShifts1">Here you can add, remove and edit all your shifts\n\nThese are used to fill your calendar</string>
+
+    <string name="toastFieldsCorrect">Please enter correct data in al the fields!</string>
+    <string name="title_activity_tabbed_test">TabbedTestActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

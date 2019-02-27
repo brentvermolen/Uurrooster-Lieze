@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/maandenHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_layout_square"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dagen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Januari"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/january"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Februari"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/february"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Maart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/march"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/April"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/april"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Mei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/may"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Juni"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/june"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Juli"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/july"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Augustus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/august"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/September"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/september"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Oktober"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/october"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/November"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/november"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/December"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:gravity="center"
+                android:text="@string/december"
+                android:textAlignment="center"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_layout_square"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/dagenHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border_layout_square"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/dagenHead1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="11"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="13"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="14"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="15"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="16"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead17"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="17"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="18"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="19"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="21"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="22"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead23"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="23"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead24"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="24"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead25"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="25"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead26"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="26"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead27"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="27"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead28"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="28"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead29"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="29"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="30"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dagenHead31"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_layout_square"
+                    android:gravity="center"
+                    android:text="31"
+                    android:textAlignment="center"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenJanuari"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenFebruari"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenMaart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenApril"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenMei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenJuni"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenJuli"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenAugustus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenSeptember"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenOktober"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenNovember"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dagenDecember"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
