@@ -236,7 +236,7 @@ public class MonthWidget extends AppWidgetProvider {
                 }
 
                 firstDayOfWeekThisMonth -= firstDay;
-                if (firstDayOfWeekThisMonth < 1){
+                if (firstDayOfWeekThisMonth <= 1){
                     firstDayOfWeekThisMonth += 7;
                 }
 

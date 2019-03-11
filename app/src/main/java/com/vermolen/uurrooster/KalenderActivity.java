@@ -486,6 +486,7 @@ public class KalenderActivity extends AppCompatActivity {
                                     @Override
                                     protected Void doInBackground(Void... voids) {
                                         Writer.removeWerk(i, maand, jaar);
+                                        werkData.remove(i);
                                         return null;
                                     }
                                 }.executeOnExecutor(THREAD_POOL_EXECUTOR);
@@ -494,6 +495,10 @@ public class KalenderActivity extends AppCompatActivity {
                                     @Override
                                     protected Void doInBackground(Void... voids) {
                                         Writer.addWerkShift(shift, i, maand, jaar);
+                                        werkData.remove(i);
+                                        List<String> data = new ArrayList<>();
+                                        data.add(shift);
+                                        werkData.put(i, data);
                                         return null;
                                     }
                                 }.executeOnExecutor(THREAD_POOL_EXECUTOR);
@@ -505,6 +510,7 @@ public class KalenderActivity extends AppCompatActivity {
                                 @Override
                                 protected Void doInBackground(Void... voids) {
                                     Writer.removeWerk(i, maand, jaar);
+                                    werkData.remove(i);
                                     return null;
                                 }
                             }.executeOnExecutor(THREAD_POOL_EXECUTOR);
@@ -1402,7 +1408,7 @@ public class KalenderActivity extends AppCompatActivity {
 
                 //eersteDag = 0; //maandag
                 firstDayOfWeekThisMonth -= firstDay;
-                if (firstDayOfWeekThisMonth < 1) {
+                if (firstDayOfWeekThisMonth <= 1) {
                     firstDayOfWeekThisMonth += 7;
                 }
 
