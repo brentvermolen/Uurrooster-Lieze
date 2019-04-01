@@ -23,7 +23,6 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-
                 android:layout_height="match_parent">
 
                 <LinearLayout
@@ -216,6 +215,44 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/backgroundShift" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Android Kalender Sync"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/lblKalender"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Geen Kalender"
+                                        android:textColor="@android:color/black"
+                                        android:layout_weight="1"
+                                        android:textSize="16dp"/>
+
+                                    <Button
+                                        android:id="@+id/btnKiesKalender"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/choose"/>
+
+                                </LinearLayout>
+
                             </LinearLayout>
 
                         </LinearLayout>

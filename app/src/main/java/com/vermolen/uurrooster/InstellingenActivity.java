@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
@@ -29,6 +30,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
@@ -53,7 +55,9 @@ import com.vermolen.uurrooster.Classes.Writer;
 import com.vermolen.uurrooster.Model.User;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,6 +94,9 @@ public class InstellingenActivity extends AppCompatActivity {
     boolean isCalShown;
 
     LinearLayout llCalPreview;
+
+    TextView lblKalender;
+    Button btnKiesKalender;
 
     private Map<Voorkeur, String> voorkeuren;
     private ArrayAdapter<String> days;
@@ -365,6 +372,12 @@ public class InstellingenActivity extends AppCompatActivity {
         cboFirstDay = (Spinner) findViewById(R.id.cboFirstDay);
         lblPreviewTextSize = (TextView) findViewById(R.id.lblPreviewSize);
         skbTextSize = (SeekBar) findViewById(R.id.skbTextSize);
+
+        lblKalender = findViewById(R.id.lblKalender);
+        btnKiesKalender = findViewById(R.id.btnKiesKalender);
+        if (CalendarSingletons.sharedPreferencesCalendar.getBoolean("synced", false)){
+            lblKalender.setText(CalendarSingletons.sharedPreferencesCalendar.getString("calendar", ""));
+        }
 
         days = new ArrayAdapter<>(this, R.layout.spinner_item);
         for (int i = 2; i <= 7; i++){
@@ -731,6 +744,61 @@ public class InstellingenActivity extends AppCompatActivity {
 
                 editor.apply();
                 editor.commit();
+            }
+        });
+
+        btnKiesKalender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cursor cur = Methodes.getAllCalendars(InstellingenActivity.this);
+
+                final int PROJECTION_ID_INDEX = 0;
+                final int PROJECTION_ACCOUNT_NAME_INDEX = 1;
+                final int PROJECTION_DISPLAY_NAME_INDEX = 2;
+                final int PROJECTION_OWNER_ACCOUNT_INDEX = 3;
+
+                final Map<Long, String> calendars = new HashMap<>();
+
+                while (cur.moveToNext()){
+                    long calID = 0;
+                    String displayName = null;
+                    String accountName = null;
+                    String ownerName = null;
+
+                    // Get the field values
+                    calID = cur.getLong(PROJECTION_ID_INDEX);
+                    displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
+                    accountName = cur.getString(PROJECTION_ACCOUNT_NAME_INDEX);
+                    ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
+
+                    calendars.put(calID, displayName);
+                }
+
+                ListView lst = new ListView(InstellingenActivity.this);
+
+                final List<String> calNames = new ArrayList<String>(calendars.values());
+                lst.setAdapter(new ArrayAdapter<String>(InstellingenActivity.this, android.R.layout.simple_list_item_1, calNames));
+
+                lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        for (Long id : calendars.keySet()){
+                            if (calendars.get(id).equals(calNames.get(i))){
+
+                                CalendarSingletons.sharedPreferencesCalendar.edit().putBoolean("synced", true).apply();
+                                CalendarSingletons.sharedPreferencesCalendar.edit().putString("calendar", calNames.get(i)).apply();
+                                CalendarSingletons.sharedPreferencesCalendar.edit().putLong("cal_id", id).apply();
+                                CalendarSingletons.sharedPreferencesCalendar.edit().commit();
+                                lblKalender.setText(calNames.get(i));
+                                break;
+                            }
+                        }
+                    }
+                });
+
+                new AlertDialog.Builder(InstellingenActivity.this)
+                        .setView(lst)
+                        .show();
             }
         });
     }

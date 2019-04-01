@@ -482,38 +482,20 @@ public class KalenderActivity extends AppCompatActivity {
                         for (final int i : nieuweShiften.keySet()) {
                             final String shift = nieuweShiften.get(i);
                             if (shift.equals("")) {
-                                new AsyncTask<Void, Void, Void>(){
-                                    @Override
-                                    protected Void doInBackground(Void... voids) {
-                                        Writer.removeWerk(i, maand, jaar);
-                                        werkData.remove(i);
-                                        return null;
-                                    }
-                                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+                                Writer.removeWerk(i, maand, jaar);
+                                werkData.remove(i);
                             } else {
-                                new AsyncTask<Void, Void, Void>(){
-                                    @Override
-                                    protected Void doInBackground(Void... voids) {
-                                        Writer.addWerkShift(shift, i, maand, jaar);
-                                        werkData.remove(i);
-                                        List<String> data = new ArrayList<>();
-                                        data.add(shift);
-                                        werkData.put(i, data);
-                                        return null;
-                                    }
-                                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+                                Writer.addWerkShift(shift, shiften.get(shift), i, maand, jaar);
+                                werkData.remove(i);
+                                List<String> data = new ArrayList<>();
+                                data.add(shift);
+                                werkData.put(i, data);
                             }
                         }
 
                         for (final int i : removeShiften) {
-                            new AsyncTask<Void, Void, Void>(){
-                                @Override
-                                protected Void doInBackground(Void... voids) {
-                                    Writer.removeWerk(i, maand, jaar);
-                                    werkData.remove(i);
-                                    return null;
-                                }
-                            }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+                            Writer.removeWerk(i, maand, jaar);
+                            werkData.remove(i);
                         }
 
                         return null;
@@ -608,6 +590,28 @@ public class KalenderActivity extends AppCompatActivity {
         cal.set(Calendar.YEAR, jaar);
         cal.set(Calendar.DAY_OF_MONTH, 1);
 
+        werk = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                werkData = Reader.getWerkData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        wissel = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                wisselData = Reader.getWisselData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        persoonlijk = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                persoonlijkData = Reader.getPersoonlijkData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+
         new AsyncTask<Void, Void, Void>(){
             @Override
             protected void onPreExecute() {
@@ -616,29 +620,6 @@ public class KalenderActivity extends AppCompatActivity {
 
             @Override
             protected Void doInBackground(Void... voids) {
-
-                werk = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        werkData = Reader.getWerkData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                wissel = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        wisselData = Reader.getWisselData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                persoonlijk = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        persoonlijkData = Reader.getPersoonlijkData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-
                 try {
                     werk.get();
                 } catch (InterruptedException e) {
@@ -886,9 +867,13 @@ public class KalenderActivity extends AppCompatActivity {
 
         final AsyncTask tskLoadCalendar = new AsyncTask() {
             @Override
-            protected Object doInBackground(Object[] objects) {
+            protected void onPreExecute() {
                 btnToolbarLijst.setEnabled(false);
                 btnToolbarEdit.setEnabled(false);
+            }
+
+            @Override
+            protected Object doInBackground(Object[] objects) {
                 return null;
             }
 
@@ -1264,6 +1249,57 @@ public class KalenderActivity extends AppCompatActivity {
             }
         }.executeOnExecutor(THREAD_POOL_EXECUTOR);
 
+        werk = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                werkData = Reader.getWerkData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        wissel = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                wisselData = Reader.getWisselData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        persoonlijk = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                persoonlijkData = Reader.getPersoonlijkData(maand, jaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        //TODO
+        final AsyncTask<Void, Void, Void> vorigeWerk = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                Maand vorigeMaand = Maand.valueOf(maand.getNr() - 1);
+                int vorigJaar = jaar;
+
+                if (vorigeMaand.getNr() == 12) {
+                    vorigJaar--;
+                }
+
+                werkDataVorige = Reader.getWerkData(vorigeMaand, vorigJaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+        final AsyncTask<Void, Void, Void> volgendeWerk = new AsyncTask<Void, Void, Void>(){
+            @Override
+            protected Void doInBackground(Void... voids) {
+                Maand volgendeMaand = Maand.valueOf(maand.getNr() + 1);
+                int volgendJaar = jaar;
+
+                if (volgendeMaand.getNr() == 1){
+                    volgendJaar++;
+                }
+
+                werkDataVolgende = Reader.getWerkData(volgendeMaand, volgendJaar);
+                return null;
+            }
+        }.executeOnExecutor(THREAD_POOL_EXECUTOR);
+
         new AsyncTask<Void, Void, Void>(){
             @Override
             protected void onPreExecute() {
@@ -1272,57 +1308,6 @@ public class KalenderActivity extends AppCompatActivity {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                werk = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        werkData = Reader.getWerkData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                wissel = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        wisselData = Reader.getWisselData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                persoonlijk = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        persoonlijkData = Reader.getPersoonlijkData(maand, jaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                //TODO
-                AsyncTask<Void, Void, Void> vorigeWerk = new AsyncTask<Void, Void, Void>() {
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        Maand vorigeMaand = Maand.valueOf(maand.getNr() - 1);
-                        int vorigJaar = jaar;
-
-                        if (vorigeMaand.getNr() == 12) {
-                            vorigJaar--;
-                        }
-
-                        werkDataVorige = Reader.getWerkData(vorigeMaand, vorigJaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-                AsyncTask<Void, Void, Void> volgendeWerk = new AsyncTask<Void, Void, Void>(){
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        Maand volgendeMaand = Maand.valueOf(maand.getNr() + 1);
-                        int volgendJaar = jaar;
-
-                        if (volgendeMaand.getNr() == 1){
-                            volgendJaar++;
-                        }
-
-                        werkDataVolgende = Reader.getWerkData(volgendeMaand, volgendJaar);
-                        return null;
-                    }
-                }.executeOnExecutor(THREAD_POOL_EXECUTOR);
-
                 try {
                     werk.get();
                 } catch (InterruptedException e) {

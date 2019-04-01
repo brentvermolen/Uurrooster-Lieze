@@ -1,10 +1,18 @@
 package com.vermolen.uurrooster.Classes;
 
+import android.Manifest;
 import android.app.Application;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.CursorLoader;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.CalendarContract;
+import android.support.v4.app.ActivityCompat;
 
 import com.vermolen.uurrooster.R;
 import com.vermolen.uurrooster.Widget.MonthWidget;
@@ -259,5 +267,38 @@ public class Methodes {
         int[] ids4 = AppWidgetManager.getInstance(application).getAppWidgetIds(new ComponentName(application, MonthWidget.class));
         intent4.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids4);
         context.sendBroadcast(intent4);
+    }
+
+    public static Cursor getAllCalendars(Context context){
+        final String[] EVENT_PROJECTION = new String[]{
+                CalendarContract.Calendars._ID,                           // 0
+                CalendarContract.Calendars.ACCOUNT_NAME,                  // 1
+                CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,         // 2
+                CalendarContract.Calendars.OWNER_ACCOUNT                  // 3
+        };
+
+        final int PROJECTION_ID_INDEX = 0;
+        final int PROJECTION_ACCOUNT_NAME_INDEX = 1;
+        final int PROJECTION_DISPLAY_NAME_INDEX = 2;
+        final int PROJECTION_OWNER_ACCOUNT_INDEX = 3;
+
+        Cursor cur = null;
+        ContentResolver cr = context.getContentResolver();
+        Uri uri = CalendarContract.Calendars.CONTENT_URI;
+// Submit the query and get a Cursor object back.
+
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return null;
+        }
+        cur = cr.query(uri, EVENT_PROJECTION, null, null, null);
+
+        return cur;
     }
 }

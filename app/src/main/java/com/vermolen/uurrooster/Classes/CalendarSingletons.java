@@ -1,6 +1,8 @@
 package com.vermolen.uurrooster.Classes;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.ArrayAdapter;
 
 import com.vermolen.uurrooster.Classes.Enums.Maand;
@@ -37,6 +39,9 @@ public class CalendarSingletons {
     private static Map<Integer, List<String>> persoonlijkData;
     private static Maand persoonlijkMaand;
     private static int persoonlijkJaar;
+
+    public static SharedPreferences sharedPreferencesCalendar;
+    public static ContentResolver contentResolver;
 
     public static Map<String, List<String>> getShiften(){
         if (shiften == null) {

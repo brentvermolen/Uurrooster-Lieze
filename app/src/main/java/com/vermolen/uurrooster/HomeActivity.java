@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
+import com.vermolen.uurrooster.Classes.CalendarSingletons;
 import com.vermolen.uurrooster.Classes.DirResSingleton;
 import com.vermolen.uurrooster.Classes.FirstTimeDialog;
 import com.vermolen.uurrooster.Classes.Methodes;
@@ -70,6 +71,9 @@ public class HomeActivity extends AppCompatActivity {
         readUser();
 
         //checkFirstTime();
+
+        CalendarSingletons.sharedPreferencesCalendar = getSharedPreferences("calendar", MODE_PRIVATE);
+        CalendarSingletons.contentResolver = getContentResolver();
 
         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("Settings", MODE_PRIVATE);
         boolean startupCalendar = sharedPref.getBoolean("startupScreen", false);

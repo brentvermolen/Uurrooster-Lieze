@@ -1,5 +1,6 @@
 package com.vermolen.uurrooster;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -71,6 +72,7 @@ public class DetailsActivity extends AppCompatActivity {
     ArrayAdapter<String> collegas;
     private Map<Integer, List<String>> werkData;
     private Map<Integer, List<String>> wisselData;
+    private List<String> shiftData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -230,7 +232,7 @@ public class DetailsActivity extends AppCompatActivity {
         if (!currShift.equals("")){
             String shift = currShift;
             lblShift.setText(shift);
-            List<String> shiftData = Reader.getShiften().get(shift);
+            shiftData = Reader.getShiften().get(shift);
             lblExtra.setText(shiftData.get(0));
             if (!shiftData.get(1).equals("0") && !shiftData.get(3).equals("0")){
                 String tekst = String.format("%02d:%02d - %02d:%02d", Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)),
@@ -405,6 +407,7 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
         btnOpslaan.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View v) {
                 new AsyncTask<Void, Void, Void>(){
@@ -414,18 +417,19 @@ public class DetailsActivity extends AppCompatActivity {
                     }
 
                     @Override
+                    @SuppressLint("WrongThread")
                     protected Void doInBackground(Void... voids) {
                         if (shift.equals("")){
                             if (cboShift.getAdapter().getCount() > 1 && !cboShift.getSelectedItem().toString().equals("")){
                                 shift = cboShift.getSelectedItem().toString();
-                                Writer.addWerkShift(shift, dag, maand, jaar);
+                                Writer.addWerkShift(shift, shiftData, dag, maand, jaar);
                                 CalendarSingletons.addWerkData(dag, Arrays.asList(shift));
 
                                 werkData = Reader.getWerkData(maand, jaar);
                             }
                         }
 
-                        boolean bleWissel = chkWissel.isChecked();
+                         boolean bleWissel = chkWissel.isChecked();
                         if (bleWissel){
                             String orig = lblOriginele.getText().toString();
                             String wissel = cboShift.getSelectedItem().toString();
@@ -435,7 +439,7 @@ public class DetailsActivity extends AppCompatActivity {
                                 return null;
                             }else{
                                 if (geefDataWerk(dag, false).equals("")){
-                                    Writer.addWerkShift(shift, dag, maand, jaar);
+                                    Writer.addWerkShift(shift, shiftData, dag, maand, jaar);
                                     CalendarSingletons.addWerkData(dag, Arrays.asList(shift));
                                     werkData = Reader.getWerkData(maand, jaar);
                                 }
@@ -458,7 +462,7 @@ public class DetailsActivity extends AppCompatActivity {
                             Writer.removeWissel(dag, maand, jaar);
                             CalendarSingletons.removeWisselData(dag);
                             if (!shift.equals("")){
-                                Writer.editWerkShift(shift, dag, maand, jaar);
+                                Writer.editWerkShift(shift, CalendarSingletons.getShiften().get(shift), dag, maand, jaar);
                                 CalendarSingletons.editWerkShift(shift, dag);
 
                                 wisselData = Reader.getWisselData(maand, jaar);
@@ -547,7 +551,7 @@ public class DetailsActivity extends AppCompatActivity {
                         if(cboShift.getAdapter().getCount() > 1){ //Shift "" wordt automatisch toegevoegd
                             if (!cboShift.getSelectedItem().toString().equals("")){
                                 shift = cboShift.getSelectedItem().toString();
-                                Writer.addWerkShift(shift, dag, maand, jaar);
+                                Writer.addWerkShift(shift, shiftData, dag, maand, jaar);
                                 CalendarSingletons.addWerkData(dag, Arrays.asList(shift));
                                 werkData = Reader.getWerkData(maand, jaar);
                                 lblOriginele.setText(shift);
