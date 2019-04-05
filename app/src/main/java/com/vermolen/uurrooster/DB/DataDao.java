@@ -120,6 +120,44 @@ public class DataDao {
         return werkData;
     }
 
+    public List<List<Integer>> getWerkData(String oudeShift) {
+        List<List<Integer>> werkData = new ArrayList<>();
+
+        Connection con = null;
+
+        try {
+            con = connectionClass.CONN();
+
+            if (con == null) {
+                z = "Error in connection with SQL server";
+            } else {
+                String query = "Select * From cal_werk Where shift='" + oudeShift + "' AND user_id=" + UserSingleton.getInstance().getUser_id();
+
+                Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                ResultSet rs = stmt.executeQuery(query);
+
+                while (rs.next()){
+                    List<Integer> data = new ArrayList<>();
+                    data.add(rs.getInt(2));
+                    data.add(rs.getInt(3));
+                    data.add(rs.getInt(4));
+
+                    werkData.add(data);
+                }
+            }
+        } catch (Exception ex) {
+            z = "Exceptions";
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return werkData;
+    }
+
     public Map<Integer, List<String>> getWisselData(Maand maand, int jaar) {
         Map<Integer, List<String>> wisselData = new HashMap<>();
 

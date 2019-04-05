@@ -59,9 +59,57 @@ public class Writer {
     private final static CollegasDao collegasDao = new CollegasDao();
     private final static DataDao dataDao = new DataDao();
 
-    public static void editShift(String oud, String nieuw, List<String> shiftData) {
+    public static void editShift(String oud, final String nieuw, final List<String> shiftData) {
         if (oud.equals("") || nieuw.equals("")) {
             throw new IllegalArgumentException("Parameter cannot be empty");
+        }
+
+        final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
+
+        if (cal_id != -1){
+            final List<List<Integer>> datums;
+
+            if (UserSingleton.getInstance().getUser_id() == -1){
+                datums = TextReader.getWerkData(oud, DirResSingleton.getInstance());
+            }else{
+                datums = dataDao.getWerkData(oud);
+            }
+
+            new AsyncTask<Void, Void, Void>(){
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    for (List<Integer> datum : datums){
+                        int dag = datum.get(0);
+                        Maand maand = Maand.valueOf(datum.get(1));
+                        int jaar = datum.get(2);
+                        long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(dag + "/" + maand + "/" + jaar, -1);
+
+                        if (event_id != -1){
+                            Calendar calendar = Calendar.getInstance();
+                            calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
+                            long startMillis = calendar.getTimeInMillis();
+
+                            calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(3)), Integer.parseInt(shiftData.get(4)), 0);
+                            long endMillis = calendar.getTimeInMillis();
+
+                            ContentResolver cr = CalendarSingletons.contentResolver;
+                            ContentValues values = new ContentValues();
+                            values.put(CalendarContract.Events.DTSTART, startMillis);
+                            values.put(CalendarContract.Events.DTEND, endMillis);
+                            values.put(CalendarContract.Events.TITLE, nieuw);
+                            values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
+                            values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
+                            values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+
+                            @SuppressLint("MissingPermission") Uri uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
+                            int rows = cr.update(uri, values, null, null);
+                            CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
+                        }
+                    }
+
+                    return null;
+                }
+            }.execute();
         }
 
         if (UserSingleton.getInstance().getUser_id() == -1) {
@@ -138,29 +186,27 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id == -1){
-            return;
-        }
+        if (cal_id != -1){
+            new AsyncTask<Void, Void, Void>(){
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
 
-        new AsyncTask<Void, Void, Void>(){
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
+                    long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(jaar + "/" + maand + "/" + dag, -1);
+                    if (event_id == -1){
+                        return null;
+                    }
 
-                long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(jaar + "/" + maand + "/" + dag, -1);
-                if (event_id == -1){
+                    ContentResolver cr = CalendarSingletons.contentResolver;
+                    Uri deleteUri = null;
+                    deleteUri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
+                    int rows = cr.delete(deleteUri, null, null);
+
                     return null;
                 }
-
-                ContentResolver cr = CalendarSingletons.contentResolver;
-                Uri deleteUri = null;
-                deleteUri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
-                int rows = cr.delete(deleteUri, null, null);
-
-                return null;
-            }
-        }.execute();
+            }.execute();
+        }
 
         if (UserSingleton.getInstance().getUser_id() == -1) {
             TextWriter.removeWerk(dag, maand, jaar, DirResSingleton.getInstance());
@@ -179,37 +225,35 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id == -1){
-            return;
+        if (cal_id != -1){
+            new AsyncTask<Void, Void, Void>(){
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
+                    long dagMillis = calendar.getTimeInMillis();
+
+                    calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
+                    long startMillis = calendar.getTimeInMillis();
+
+                    calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(3)), Integer.parseInt(shiftData.get(4)), 0);
+                    long endMillis = calendar.getTimeInMillis();
+
+                    ContentResolver cr = CalendarSingletons.contentResolver;
+                    ContentValues values = new ContentValues();
+                    values.put(CalendarContract.Events.DTSTART, startMillis);
+                    values.put(CalendarContract.Events.DTEND, endMillis);
+                    values.put(CalendarContract.Events.TITLE, shift);
+                    values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
+                    values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
+                    values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+
+                    @SuppressLint("MissingPermission") Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+                    CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
+                    return null;
+                }
+            }.execute();
         }
-
-        new AsyncTask<Void, Void, Void>(){
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
-                long dagMillis = calendar.getTimeInMillis();
-
-                calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
-                long startMillis = calendar.getTimeInMillis();
-
-                calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(3)), Integer.parseInt(shiftData.get(4)), 0);
-                long endMillis = calendar.getTimeInMillis();
-
-                ContentResolver cr = CalendarSingletons.contentResolver;
-                ContentValues values = new ContentValues();
-                values.put(CalendarContract.Events.DTSTART, startMillis);
-                values.put(CalendarContract.Events.DTEND, endMillis);
-                values.put(CalendarContract.Events.TITLE, shift);
-                values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
-                values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
-                values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
-
-                @SuppressLint("MissingPermission") Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-                CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
-                return null;
-            }
-        }.execute();
 
         if (UserSingleton.getInstance().getUser_id() == -1){
             TextWriter.addWerkShift(shift, dag, maand, jaar, DirResSingleton.getInstance());
@@ -258,43 +302,41 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id == -1){
-            return;
-        }
+        if (cal_id != -1){
+            new AsyncTask<Void, Void, Void>(){
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
 
-        new AsyncTask<Void, Void, Void>(){
-            @Override
-            protected Void doInBackground(Void... voids) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
+                    long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(jaar + "/" + maand + "/" + dag, -1);
+                    if (event_id == -1){
+                        return null;
+                    }
 
-                long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(jaar + "/" + maand + "/" + dag, -1);
-                if (event_id == -1){
+                    calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
+                    long startMillis = calendar.getTimeInMillis();
+
+                    calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(3)), Integer.parseInt(shiftData.get(4)), 0);
+                    long endMillis = calendar.getTimeInMillis();
+
+                    ContentResolver cr = CalendarSingletons.contentResolver;
+                    ContentValues values = new ContentValues();
+                    values.put(CalendarContract.Events.DTSTART, startMillis);
+                    values.put(CalendarContract.Events.DTEND, endMillis);
+                    values.put(CalendarContract.Events.TITLE, shift);
+                    values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
+                    values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
+                    values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+
+
+                    @SuppressLint("MissingPermission") Uri uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
+                    int rows = cr.update(uri, values, null, null);
+                    CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
                     return null;
                 }
-
-                calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
-                long startMillis = calendar.getTimeInMillis();
-
-                calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(3)), Integer.parseInt(shiftData.get(4)), 0);
-                long endMillis = calendar.getTimeInMillis();
-
-                ContentResolver cr = CalendarSingletons.contentResolver;
-                ContentValues values = new ContentValues();
-                values.put(CalendarContract.Events.DTSTART, startMillis);
-                values.put(CalendarContract.Events.DTEND, endMillis);
-                values.put(CalendarContract.Events.TITLE, shift);
-                values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
-                values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
-                values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
-
-
-                @SuppressLint("MissingPermission") Uri uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
-                int rows = cr.update(uri, values, null, null);
-                CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
-                return null;
-            }
-        }.execute();
+            }.execute();
+        }
 
         if (UserSingleton.getInstance().getUser_id() == -1){
             TextWriter.editWerkShift(shift, dag, maand, jaar, DirResSingleton.getInstance());

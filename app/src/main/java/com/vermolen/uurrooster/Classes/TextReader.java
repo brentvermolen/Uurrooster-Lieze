@@ -172,6 +172,45 @@ public class TextReader {
         return werkData;
     }
 
+    public static List<List<Integer>> getWerkData(String oud, File dirRes) {
+        List<List<Integer>> werkData = new ArrayList<>();
+        //TODO: NIET ZEKER
+        Map<Integer, List<String>> archief = getArchief(dirRes);
+
+        for (int jaar : archief.keySet()){
+            for (String strMaand : archief.get(jaar)){
+                int maand = Integer.valueOf(strMaand);
+
+                File bestand = new File(dirRes.getAbsolutePath() + "/Werk/" + String.valueOf(jaar) + "/" + strMaand + ".uaz");
+                if (bestand.exists())
+                {
+                    try {
+                        BufferedReader br = new BufferedReader(new FileReader(bestand));
+
+                        String lijn = "";
+
+                        while ((lijn = br.readLine()) != null)
+                        {
+                            String[] split = lijn.split(";");
+                            List<Integer> data = new ArrayList<>();
+                            data.add(Integer.valueOf(split[0]));
+                            data.add(maand);
+                            data.add(jaar);
+
+                            werkData.add(data);
+                        }
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        return werkData;
+    }
+
     public static Map<Integer, List<String>> getWisselData(Maand maand, int jaar, File dirRes) {
         Map<Integer, List<String>> wisselData = new HashMap<>();
 
