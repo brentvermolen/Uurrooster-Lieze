@@ -43,6 +43,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.os.AsyncTask.THREAD_POOL_EXECUTOR;
 
 public class KalenderActivity extends AppCompatActivity {
@@ -612,7 +613,8 @@ public class KalenderActivity extends AppCompatActivity {
             }
         }.executeOnExecutor(THREAD_POOL_EXECUTOR);
 
-        new AsyncTask<Void, Void, Void>(){
+        new AsyncTask<Void, Void, Void>()
+        {
             @Override
             protected void onPreExecute() {
                 prgLoading.setVisibility(View.VISIBLE);
@@ -1007,7 +1009,7 @@ public class KalenderActivity extends AppCompatActivity {
                     int id = res.getIdentifier("dag" + i, "id", KalenderActivity.this.getPackageName());
 
                     //Kalender
-                    LayoutInflater kalenderInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    LayoutInflater kalenderInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                     LinearLayout kalenderView = (LinearLayout) kalenderInflater.inflate(R.layout.dag_layout, null);
 
                     // fill in any details dynamically here
