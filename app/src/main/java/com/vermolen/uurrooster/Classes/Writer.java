@@ -66,25 +66,25 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id != -1){
+        if (cal_id != -1) {
             final List<List<Integer>> datums;
 
-            if (UserSingleton.getInstance().getUser_id() == -1){
+            if (UserSingleton.getInstance().getUser_id() == -1) {
                 datums = TextReader.getWerkData(oud, DirResSingleton.getInstance());
-            }else{
+            } else {
                 datums = dataDao.getWerkData(oud);
             }
 
-            new AsyncTask<Void, Void, Void>(){
+            new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... voids) {
-                    for (List<Integer> datum : datums){
+                    for (List<Integer> datum : datums) {
                         int dag = datum.get(0);
                         Maand maand = Maand.valueOf(datum.get(1));
                         int jaar = datum.get(2);
                         long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(dag + "/" + maand + "/" + jaar, -1);
 
-                        if (event_id != -1){
+                        if (event_id != -1) {
                             Calendar calendar = Calendar.getInstance();
                             calendar.set(jaar, maand.getNr() - 1, dag, Integer.parseInt(shiftData.get(1)), Integer.parseInt(shiftData.get(2)), 0);
                             long startMillis = calendar.getTimeInMillis();
@@ -96,6 +96,9 @@ public class Writer {
                             ContentValues values = new ContentValues();
                             values.put(CalendarContract.Events.DTSTART, startMillis);
                             values.put(CalendarContract.Events.DTEND, endMillis);
+                            if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0) {
+                                values.put(CalendarContract.Events.ALL_DAY, true);
+                            }
                             values.put(CalendarContract.Events.TITLE, nieuw);
                             values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                             values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
@@ -186,15 +189,15 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id != -1){
-            new AsyncTask<Void, Void, Void>(){
+        if (cal_id != -1) {
+            new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     Calendar calendar = Calendar.getInstance();
                     calendar.set(jaar, maand.getNr() - 1, dag, 0, 0, 0);
 
                     long event_id = CalendarSingletons.sharedPreferencesCalendar.getLong(jaar + "/" + maand + "/" + dag, -1);
-                    if (event_id == -1){
+                    if (event_id == -1) {
                         return null;
                     }
 
@@ -225,8 +228,8 @@ public class Writer {
 
         final long cal_id = CalendarSingletons.sharedPreferencesCalendar.getLong("cal_id", -1);
 
-        if (cal_id != -1){
-            new AsyncTask<Void, Void, Void>(){
+        if (cal_id != -1) {
+            new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     Calendar calendar = Calendar.getInstance();
@@ -243,6 +246,9 @@ public class Writer {
                     ContentValues values = new ContentValues();
                     values.put(CalendarContract.Events.DTSTART, startMillis);
                     values.put(CalendarContract.Events.DTEND, endMillis);
+                    if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0) {
+                        values.put(CalendarContract.Events.ALL_DAY, true);
+                    }
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
@@ -324,6 +330,9 @@ public class Writer {
                     ContentValues values = new ContentValues();
                     values.put(CalendarContract.Events.DTSTART, startMillis);
                     values.put(CalendarContract.Events.DTEND, endMillis);
+                    if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0){
+                        values.put(CalendarContract.Events.ALL_DAY, true);
+                    }
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
