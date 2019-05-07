@@ -94,11 +94,16 @@ public class Writer {
 
                             ContentResolver cr = CalendarSingletons.contentResolver;
                             ContentValues values = new ContentValues();
-                            values.put(CalendarContract.Events.DTSTART, startMillis);
-                            values.put(CalendarContract.Events.DTEND, endMillis);
                             if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0) {
                                 values.put(CalendarContract.Events.ALL_DAY, true);
+                                calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                                 startMillis = calendar.getTimeInMillis();
+
+                                calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                                endMillis = calendar.getTimeInMillis();
                             }
+                            values.put(CalendarContract.Events.DTSTART, startMillis);
+                            values.put(CalendarContract.Events.DTEND, endMillis);
                             values.put(CalendarContract.Events.TITLE, nieuw);
                             values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                             values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
@@ -244,11 +249,16 @@ public class Writer {
 
                     ContentResolver cr = CalendarSingletons.contentResolver;
                     ContentValues values = new ContentValues();
-                    values.put(CalendarContract.Events.DTSTART, startMillis);
-                    values.put(CalendarContract.Events.DTEND, endMillis);
                     if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0) {
                         values.put(CalendarContract.Events.ALL_DAY, true);
+                        calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                        startMillis = calendar.getTimeInMillis();
+
+                        calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                        endMillis = calendar.getTimeInMillis();
                     }
+                    values.put(CalendarContract.Events.DTSTART, startMillis);
+                    values.put(CalendarContract.Events.DTEND, endMillis);
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
@@ -328,11 +338,16 @@ public class Writer {
 
                     ContentResolver cr = CalendarSingletons.contentResolver;
                     ContentValues values = new ContentValues();
-                    values.put(CalendarContract.Events.DTSTART, startMillis);
-                    values.put(CalendarContract.Events.DTEND, endMillis);
                     if (Integer.parseInt(shiftData.get(3)) == 0 && Integer.parseInt(shiftData.get(4)) == 0){
                         values.put(CalendarContract.Events.ALL_DAY, true);
+                        calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                        startMillis = calendar.getTimeInMillis();
+
+                        calendar.set(jaar, maand.getNr() - 1, dag, 12, 0, 0);
+                        endMillis = calendar.getTimeInMillis();
                     }
+                    values.put(CalendarContract.Events.DTSTART, startMillis);
+                    values.put(CalendarContract.Events.DTEND, endMillis);
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
