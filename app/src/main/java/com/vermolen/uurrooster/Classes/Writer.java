@@ -107,7 +107,7 @@ public class Writer {
                             values.put(CalendarContract.Events.TITLE, nieuw);
                             values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                             values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
-                            values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+                            values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());
 
                             @SuppressLint("MissingPermission") Uri uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
                             int rows = cr.update(uri, values, null, null);
@@ -262,7 +262,7 @@ public class Writer {
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
-                    values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+                    values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());
 
                     @SuppressLint("MissingPermission") Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
                     CalendarSingletons.sharedPreferencesCalendar.edit().putLong(jaar + "/" + maand + "/" + dag, Long.parseLong(uri.getLastPathSegment())).commit();
@@ -351,7 +351,7 @@ public class Writer {
                     values.put(CalendarContract.Events.TITLE, shift);
                     values.put(CalendarContract.Events.DESCRIPTION, shiftData.get(0));
                     values.put(CalendarContract.Events.CALENDAR_ID, cal_id);
-                    values.put(CalendarContract.Events.EVENT_TIMEZONE, "Europe/Brussels");
+                    values.put(CalendarContract.Events.EVENT_TIMEZONE, TimeZone.getDefault().getID());
 
 
                     @SuppressLint("MissingPermission") Uri uri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI, event_id);
