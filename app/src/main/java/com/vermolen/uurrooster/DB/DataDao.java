@@ -31,7 +31,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryDelete = "Delete From cal_werk Where " +
+                String qryDelete = "Delete From dbo.cal_werk Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "dag=" + dag + " AND " +
                         "maand=" + intMaand + " AND " +
@@ -63,7 +63,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryInsert = "Insert Into cal_werk Values(" +
+                String qryInsert = "Insert Into dbo.cal_werk Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         dag + ", " +
                         intMaand + ", " +
@@ -95,7 +95,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String query = "Select * From cal_werk Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
+                String query = "Select * From dbo.cal_werk Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
@@ -131,7 +131,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String query = "Select * From cal_werk Where shift='" + oudeShift + "' AND user_id=" + UserSingleton.getInstance().getUser_id();
+                String query = "Select * From dbo.cal_werk Where shift='" + oudeShift + "' AND user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
@@ -169,7 +169,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String query = "Select * From cal_wissel Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
+                String query = "Select * From dbo.cal_wissel Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
@@ -208,7 +208,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String query = "Select * From cal_persoonlijk Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
+                String query = "Select * From dbo.cal_persoonlijk Where maand=" + maand.getNr() + " AND jaar=" + jaar + " AND user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
@@ -248,7 +248,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryInsert = "Insert Into cal_wissel Values(" +
+                String qryInsert = "Insert Into dbo.cal_wissel Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         dag + ", " +
                         intMaand + ", " +
@@ -282,7 +282,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryDelete = "Delete From cal_wissel Where " +
+                String qryDelete = "Delete From dbo.cal_wissel Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "dag=" + dag + " AND " +
                         "maand=" + intMaand + " AND " +
@@ -312,7 +312,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryDelete = "Update cal_werk Set shift='" + shift + "' Where " +
+                String qryDelete = "Update dbo.cal_werk Set shift='" + shift + "' Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "dag=" + dag + " AND " +
                         "maand=" + intMaand + " AND " +
@@ -342,7 +342,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryDelete = "Delete From cal_persoonlijk Where " +
+                String qryDelete = "Delete From dbo.cal_persoonlijk Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "dag=" + dag + " AND " +
                         "maand=" + intMaand + " AND " +
@@ -374,7 +374,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryInsert = "Insert Into cal_persoonlijk Values(" +
+                String qryInsert = "Insert Into dbo.cal_persoonlijk Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         dag + ", " +
                         intMaand + ", " +
@@ -406,7 +406,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryInsert = "Insert Into cal_voorkeuren Values(" +
+                String qryInsert = "Insert Into dbo.cal_voorkeuren Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         voorkeur.getNr() + ", '" +
                         value + "');";
@@ -434,7 +434,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryDelete = "Delete From cal_voorkeuren Where " +
+                String qryDelete = "Delete From dbo.cal_voorkeuren Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "voorkeur=" + voorkeur.getNr();
 
@@ -463,7 +463,7 @@ public class DataDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qrySelectWerk = "Select Distinct maand, jaar From cal_werk Where user_id=" + UserSingleton.getInstance().getUser_id();
+                String qrySelectWerk = "Select Distinct maand, jaar From dbo.cal_werk Where user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qrySelectWerk);
@@ -482,7 +482,7 @@ public class DataDao {
                     }
                 }
 
-                String qrySelectPersoonlijk = "Select Distinct maand, jaar From cal_persoonlijk Where user_id=" + UserSingleton.getInstance().getUser_id();
+                String qrySelectPersoonlijk = "Select Distinct maand, jaar From dbo.cal_persoonlijk Where user_id=" + UserSingleton.getInstance().getUser_id();
 
                 stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rs = stmt.executeQuery(qrySelectPersoonlijk);

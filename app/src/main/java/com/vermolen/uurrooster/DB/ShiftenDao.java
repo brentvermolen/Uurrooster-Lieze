@@ -36,7 +36,7 @@ public class ShiftenDao {
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_shiften Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
+                String query = "Select * From dbo.cal_shiften Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -75,7 +75,7 @@ public class ShiftenDao {
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_shiften Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
+                String query = "Select * From dbo.cal_shiften Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -115,7 +115,7 @@ public class ShiftenDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryCount = "Select Max(shift_id) From cal_shiften Where user_id=" + UserSingleton.getInstance().getUser_id() + ";";
+                String qryCount = "Select Max(shift_id) From dbo.cal_shiften Where user_id=" + UserSingleton.getInstance().getUser_id() + ";";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qryCount);
 
@@ -125,7 +125,7 @@ public class ShiftenDao {
                     count = rs.getInt(1);
                 }catch (Exception e) {  count = 0; }
 
-                String qryInsert = "Insert Into cal_shiften Values(" +
+                String qryInsert = "Insert Into dbo.cal_shiften Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         ++count + ", '" +
                         shift + "', '" +
@@ -161,7 +161,7 @@ public class ShiftenDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryCount = "Select shift_id From cal_shiften Where shift='" + oud + "' and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
+                String qryCount = "Select shift_id From dbo.cal_shiften Where shift='" + oud + "' and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qryCount);
 
@@ -173,7 +173,7 @@ public class ShiftenDao {
                     throw new IllegalArgumentException("Shift not found");
                 }
 
-                String qryUpdate = "Update cal_shiften Set " +
+                String qryUpdate = "Update dbo.cal_shiften Set " +
                         "shift='" + nieuw + "', extra='" +
                         shiftData.get(0) + "', \"begin\"=" +
                         shiftData.get(1)  + ", beginMin=" +
@@ -185,10 +185,10 @@ public class ShiftenDao {
                         " and shift_id=" + shift_id;
                 stmt.executeUpdate(qryUpdate);
 
-                String qryUpdateWerkData = "Update cal_werk Set shift='" + nieuw + "' Where shift='" + oud + "'";
+                String qryUpdateWerkData = "Update dbo.cal_werk Set shift='" + nieuw + "' Where shift='" + oud + "'";
                 stmt.executeUpdate(qryUpdateWerkData);
 
-                String qryUpdateWisselData = "Update cal_wissel Set shift='" + nieuw + "' Where shift='" + oud + "'";
+                String qryUpdateWisselData = "Update dbo.cal_wissel Set shift='" + nieuw + "' Where shift='" + oud + "'";
                 stmt.executeUpdate(qryUpdateWisselData);
             }
         } catch (Exception ex) {
@@ -211,7 +211,7 @@ public class ShiftenDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryCount = "Select shift_id From cal_shiften Where shift='" + shift + "' and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
+                String qryCount = "Select shift_id From dbo.cal_shiften Where shift='" + shift + "' and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qryCount);
 
@@ -223,7 +223,7 @@ public class ShiftenDao {
                     throw new IllegalArgumentException("Shift not found");
                 }
 
-                String qryDelete = "Delete From cal_shiften Where " +
+                String qryDelete = "Delete From dbo.cal_shiften Where " +
                         "user_id=" + UserSingleton.getInstance().getUser_id() + " AND " +
                         "shift_id=" + shift_id + ";";
 

@@ -30,7 +30,7 @@ public class UserDao{
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_users Where username='" + username + "'";
+                String query = "Select * From dbo.cal_users Where username='" + username + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -48,7 +48,7 @@ public class UserDao{
         } finally {
             try {
                 con.close();
-            } catch (SQLException e) {
+            } catch (NullPointerException | SQLException e) {
                 e.printStackTrace();
             }
         }
@@ -71,7 +71,7 @@ public class UserDao{
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_users Where user_id='" + user_id + "'";
+                String query = "Select * From dbo.cal_users Where user_id='" + user_id + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -111,14 +111,14 @@ public class UserDao{
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String qryCount = "Select Max(user_id) From cal_users";
+                String qryCount = "Select Max(user_id) From dbo.cal_users";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qryCount);
 
                 rs.first();
                 int count = rs.getInt(1);
 
-                String query = "Insert Into cal_users Values (" + ++count + ", '" + user.getUsername() + "', '" + user.getPassword() + "')";
+                String query = "Insert Into dbo.cal_users Values (" + ++count + ", '" + user.getUsername() + "', '" + user.getPassword() + "')";
                 stmt.executeUpdate(query);
             }
 

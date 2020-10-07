@@ -39,7 +39,7 @@ public class VoorkeurenDao {
             if (con == null) {
                 z = "Error in connection with SQL server";
             } else {
-                String query = "Select * From cal_voorkeuren Where user_id=" + UserSingleton.getInstance().getUser_id();
+                String query = "Select * From dbo.cal_voorkeuren Where user_id=" + UserSingleton.getInstance().getUser_id();
 
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);

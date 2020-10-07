@@ -34,7 +34,7 @@ public class CollegasDao {
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_collegas Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
+                String query = "Select * From dbo.cal_collegas Where user_id='" + UserSingleton.getInstance().getUser_id() + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -72,7 +72,7 @@ public class CollegasDao {
                 z = "Error in connection with SQL server";
             } else {
 
-                String query = "Select * From cal_collegas Where user_id='" + UserSingleton.getInstance().getUser_id() + "' and collega='" + name + "'";
+                String query = "Select * From dbo.cal_collegas Where user_id='" + UserSingleton.getInstance().getUser_id() + "' and collega='" + name + "'";
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(query);
 
@@ -109,7 +109,7 @@ public class CollegasDao {
                     z = "Error in connection with SQL server";
                 } else {
 
-                    String query = "update cal_collegas set collega='" + nieuweText + "' where collega_id=" + id + " and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
+                    String query = "update dbo.cal_collegas set collega='" + nieuweText + "' where collega_id=" + id + " and user_id=" + UserSingleton.getInstance().getUser_id() + ";";
                     Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                     stmt.executeUpdate(query);
                 }
@@ -136,7 +136,7 @@ public class CollegasDao {
             } else {
                 int count;
 
-                String qryCount = "Select Max(collega_id) From cal_collegas Where user_id=" + UserSingleton.getInstance().getUser_id();
+                String qryCount = "Select Max(collega_id) From dbo.cal_collegas Where user_id=" + UserSingleton.getInstance().getUser_id();
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(qryCount);
 
@@ -145,7 +145,7 @@ public class CollegasDao {
                     count = rs.getInt(1);
                 }catch (Exception e){ count = -1; }
 
-                String query = "Insert Into cal_collegas Values(" +
+                String query = "Insert Into dbo.cal_collegas Values(" +
                         UserSingleton.getInstance().getUser_id() + ", " +
                         ++count + ", '" +
                         collega + "');";
@@ -176,7 +176,7 @@ public class CollegasDao {
                     z = "Error in connection with SQL server";
                 } else {
 
-                    String query = "Delete From cal_collegas Where collega_id=" + id + " AND user_id=" + UserSingleton.getInstance().getUser_id();
+                    String query = "Delete From dbo.cal_collegas Where collega_id=" + id + " AND user_id=" + UserSingleton.getInstance().getUser_id();
                     Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                     stmt.executeUpdate(query);
                 }
