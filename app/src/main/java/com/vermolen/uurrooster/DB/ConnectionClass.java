@@ -25,7 +25,8 @@ public class ConnectionClass {
 //    String ip = "192.168.0.114:5432";
     public static boolean isLocal = false;
 
-    String ip = "81.83.203.251:5432";
+    //String ip = "81.83.203.251:5432";     //Kweek IP
+    String ip = "94.226.66.63:5432";        //Consciencestraat IP
     String classs = "org.postgresql.Driver";
     String db = "calendar";
     String un = "admin";

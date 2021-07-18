@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Uurrooster - Lieze.iml" filepath="$PROJECT_DIR$/Uurrooster - Lieze.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Uurrooster-Lieze.iml" filepath="$PROJECT_DIR$/.idea/modules/Uurrooster-Lieze.iml" group="Uurrooster-Lieze" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Uurrooster-Lieze-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Uurrooster-Lieze-app.iml" group="Uurrooster-Lieze/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jtds-1.2.7-2/Uurrooster-Lieze-jtds-1.2.7-2.iml" filepath="$PROJECT_DIR$/.idea/modules/jtds-1.2.7-2/Uurrooster-Lieze-jtds-1.2.7-2.iml" group="Uurrooster-Lieze/jtds-1.2.7-2" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7-2/jtds-1.2.7-2.iml" filepath="$PROJECT_DIR$/jtds-1.2.7-2/jtds-1.2.7-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Uurrooster-Lieze.iml" filepath="$PROJECT_DIR$/.idea/modules/Uurrooster-Lieze.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Uurrooster-Lieze.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Uurrooster-Lieze.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jtds-1.2.7-2/Uurrooster-Lieze.jtds-1.2.7-2.iml" filepath="$PROJECT_DIR$/.idea/modules/jtds-1.2.7-2/Uurrooster-Lieze.jtds-1.2.7-2.iml" />
     </modules>
   </component>
 </project>
